@@ -11,13 +11,14 @@ function Register() {
     formState: { errors },
   } = useForm();
 const  [msg,setMsg] = useState('');
+const  [err,setErr] = useState('');
+
   const onSubmit = async (user) => {
     try {
       const { data } = await axios.post("/user/signup", user);
       setMsg(data.msg)
-      console.log(data.msg);
     } catch (error) {
-      console.log(error.response.data.message);
+      setErr(error.response.data.message);
     }
   };
 
@@ -204,6 +205,11 @@ const  [msg,setMsg] = useState('');
                {
                 msg && (
                   <p className="text-green-400">{msg}</p>
+                )
+               }
+               {
+                err && (
+                  <p className="text-red-400">{err}</p>
                 )
                }
               </form>
