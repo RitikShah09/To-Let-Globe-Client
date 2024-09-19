@@ -5,7 +5,7 @@ function NotReady() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("/user/user");
+        const { data } = await axios.get("/user");
         console.log(data);
       } catch (error) {
         console.log(error.response?.data?.message || error.message);
