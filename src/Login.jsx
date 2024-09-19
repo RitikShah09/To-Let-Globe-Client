@@ -16,8 +16,7 @@ function Login() {
   const onSubmit = async (user) => {
     try {
       const { data } = await axios.post("/user/signin", user);
-      navigate('/home')
-      
+console.log(data)  
     } catch (error) {
       setMsg(error.response.data.message);
     }
