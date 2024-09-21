@@ -15,11 +15,16 @@ function Login() {
 
   const onSubmit = async (user) => {
     try {
-      const { data } = await axios.post("/user/signin", user);
-console.log(data)  
-    } catch (error) {
-      setMsg(error.response.data.message);
-    }
+  const { data } = await axios.post(
+    "https://to-let-globe-api.onrender.com/user/signin",
+    user,
+    { withCredentials: true } // Include this option
+  );
+  console.log(data);
+} catch (error) {
+  setMsg(error.response.data.message);
+}
+
   };
 
   return (
