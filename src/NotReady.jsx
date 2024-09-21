@@ -8,7 +8,7 @@ function NotReady() {
         const data = await axios.get("/user");
         console.log(data);
       } catch (error) {
-        console.log(error.response?.data?.message || error.message);
+        console.log(error.response.data.message);
       }
     };
 
