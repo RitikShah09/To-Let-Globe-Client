@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import axios from "../utils/axios";
+import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 function Login() {
   const {
